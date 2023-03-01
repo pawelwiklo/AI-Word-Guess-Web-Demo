@@ -80,8 +80,8 @@ class _GameScreenState extends State<GameScreen>
                               .gameFinishedDialog(context);
                         },
                         child: SizedBox(
-                          width: isMobile ? 75.0 : 150.0,
-                          height: isMobile ? 75.0 : 150.0,
+                          width: isMobile ? 50.0 : 150.0,
+                          height: isMobile ? 50.0 : 150.0,
                           child: Hero(
                             tag: 'app-icon',
                             child: ClipRRect(
