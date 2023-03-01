@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'dart:html' as html;
+
+import 'package:word_game_web/screens/game_screen/game_screen.dart';
 
 class GooglePlayInformation extends StatelessWidget {
   const GooglePlayInformation({
@@ -25,24 +28,43 @@ class GooglePlayInformation extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Padding(
+              Padding(
                 padding: EdgeInsets.all(16.0),
                 child: Text(
                   'AI Word Guess',
-                  style: TextStyle(fontSize: 30),
+                  style: GoogleFonts.righteous(
+                    textStyle: TextStyle(
+                        fontSize: 30,
+                        color: Colors.black,
+                        decoration: TextDecoration.none),
+                  ),
                 ),
               ),
-              const Text(
-                'Try Web Demo Version',
-                style: TextStyle(fontSize: 20),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushNamed(GameScreen.routeName);
+                },
+                child: Text(
+                  'Try Web Demo Version',
+                  style: GoogleFonts.oswald(
+                    textStyle: TextStyle(
+                        fontSize: 25,
+                        color: Colors.black,
+                        decoration: TextDecoration.underline),
+                  ),
+                ),
               ),
-              const Text(
+              Text(
                 'Or',
-                style: TextStyle(fontSize: 18),
+                style: GoogleFonts.oswald(
+                  textStyle: TextStyle(fontSize: 20, color: Colors.black),
+                ),
               ),
-              const Text(
+              Text(
                 'Try Mobile Version ',
-                style: TextStyle(fontSize: 20),
+                style: GoogleFonts.oswald(
+                  textStyle: TextStyle(fontSize: 25, color: Colors.black),
+                ),
               ),
               GestureDetector(
                 onTap: () {
