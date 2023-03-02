@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:word_game_web/constraints/colors.dart';
 import 'package:word_game_web/controllers/round_controller.dart';
 import 'package:word_game_web/models/keyboard.dart';
@@ -6,25 +7,51 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Keyboard extends StatelessWidget {
-  const Keyboard({
+  Keyboard({
     Key? key,
   }) : super(key: key);
 
+  final FocusNode _focusNode = FocusNode();
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [
-        KeyboardRow(
-          rowNumber: 0,
-        ),
-        KeyboardRow(
-          rowNumber: 1,
-        ),
-        KeyboardRow(
-          rowNumber: 2,
-        ),
-      ],
+    FocusScope.of(context).requestFocus(_focusNode);
+    return RawKeyboardListener(
+      focusNode: _focusNode,
+      onKey: (RawKeyEvent event) => {
+        if (event is RawKeyDownEvent)
+          {
+            _handleKeyPressed(event, context),
+          }
+      },
+      child: Column(
+        children: const [
+          KeyboardRow(
+            rowNumber: 0,
+          ),
+          KeyboardRow(
+            rowNumber: 1,
+          ),
+          KeyboardRow(
+            rowNumber: 2,
+          ),
+        ],
+      ),
     );
+  }
+
+  _handleKeyPressed(RawKeyEvent event, BuildContext context) {
+    RoundController roundController = Get.put(RoundController());
+    if (event is RawKeyDownEvent) {
+      String key = event.data.logicalKey.keyLabel.toUpperCase();
+      if (roundController.isWinSnackbarOpen && key == 'ENTER') {
+        roundController.isWinSnackbarOpen = false;
+        roundController.nextQuestion();
+        Get.closeCurrentSnackbar();
+      } else {
+        roundController.keyboardPress(context, key);
+      }
+    }
   }
 }
 

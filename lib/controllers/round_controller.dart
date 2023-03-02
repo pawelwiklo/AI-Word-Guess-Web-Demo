@@ -28,6 +28,7 @@ class RoundController extends GetxController
 
   RxBool isSoundOn = true.obs;
   bool wideKeyDialog = false;
+  bool isWinSnackbarOpen = false;
 
   @override
   void onClose() {
@@ -113,7 +114,7 @@ class RoundController extends GetxController
             .forward(from: 0.0)
             .then((value) => _colorController.reverse());
       }
-    } else if (letter == 'DEL') {
+    } else if (letter == 'DEL' || letter == 'BACKSPACE') {
       deleteLetter(question);
     } else {
       inputLetter(question, letter);
@@ -125,6 +126,7 @@ class RoundController extends GetxController
     double margin = MediaQuery.of(context).size.width > 600
         ? MediaQuery.of(context).size.width * 0.2
         : 15;
+    isWinSnackbarOpen = true;
     return Get.snackbar(
       'Correct answer!',
       'Move to the next question?',
@@ -142,6 +144,7 @@ class RoundController extends GetxController
       mainButton: TextButton(
         onPressed: () {
           Get.closeCurrentSnackbar();
+          isWinSnackbarOpen = false;
           nextQuestion();
         },
         child: Text(
