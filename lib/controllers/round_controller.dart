@@ -262,6 +262,9 @@ class RoundController extends GetxController
   }
 
   void inputLetter(Question question, String letter) {
+    if (letter.length > 1) {
+      return;
+    }
     for (int i = 0; i < question.answer.length; i++) {
       if (_questions[_questionNumber.value].userInput[i] == emptySign) {
         _questions[_questionNumber.value].userInput[i] = letter;
