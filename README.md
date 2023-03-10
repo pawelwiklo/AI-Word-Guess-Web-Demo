@@ -1,16 +1,27 @@
-# word_game_web
+# AI Word Guess Web Demo
+Try the web version [here](https://pawelwiklo.github.io/AI-Word-Guess-Web-Demo/)
 
-A new Flutter project.
+Guess the word based on the description made by the AI.  Hundreds of questions, diverse categories, twisted questions. Can you think like a machine?
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+ <p align="center">
+ <img align="center" alt="keystrokes" src="https://raw.githubusercontent.com/pawelwiklo/AI-Word-Guess-Web-Demo/main/gifs/word_game.gif" />
+ </p>
 
-A few resources to get you started if this is your first Flutter project:
+Like the game? Try the mobile full version here! [here](https://play.google.com/store/apps/details?id=com.pawik.word_game)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<p align="center">
+ <img align="center" alt="keystrokes" src="https://raw.githubusercontent.com/pawelwiklo/AI-Word-Guess-Web-Demo/main/assets/feature_panel_en.png" />
+ </p>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ Full game ofers:
+ - Hundreds of questions
+ - Full ENG and PL localization
+ - Multiple color themes
+
+Try it yourself!
+
+<p align="center">
+<a href="https://play.google.com/store/apps/details?id=com.pawik.word_game">
+ <img align="center" alt="keystrokes" src="https://raw.githubusercontent.com/pawelwiklo/AI-Word-Guess-Web-Demo/main/assets/google-play-badge.png"  />
+ </p>
