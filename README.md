@@ -3,6 +3,8 @@ Try the web version [here](https://pawelwiklo.github.io/AI-Word-Guess-Web-Demo/)
 
 Guess the word based on the description made by the AI.  Hundreds of questions, diverse categories, twisted questions. Can you think like a machine?
 
+Game can be played both with mouse and keyboard.
+
 
  <p align="center">
  <img align="center" alt="keystrokes" src="https://raw.githubusercontent.com/pawelwiklo/AI-Word-Guess-Web-Demo/main/gifs/word_game.gif" />
